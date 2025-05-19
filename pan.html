@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SalMystica - Panier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f7f7;
+            color: #333348;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ddd6ff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #7c6ca0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 10px 0 0 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        nav ul li a {
+            color: #5a4e80;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        nav ul li a:hover {
+            color: #9c8de1;
+        }
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: rgba(236, 234, 255, 0.8);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(156, 141, 225, 0.3);
+        }
+        #panier h2 {
+            text-align: center;
+            color: #5a4e80;
+            margin-bottom: 30px;
+        }
+        #panier-contenu {
+            margin-bottom: 30px;
+        }
+        .article-panier {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-bottom: 1px solid #cfcaf6;
+            font-size: 1.1em;
+        }
+        .article-panier:last-child {
+            border-bottom: none;
+        }
+        #panier-total {
+            text-align: right;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #4b4276;
+        }
+        footer {
+            background: #ddd6ff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            color: #4b4276;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SalMystica</h1>
+        <nav>
+  <ul>
+    <li><a href="index.html">Nos Livres</a></li>
+    <li><a href="ann.html">Annonces</a></li>
+    <li><a href="pan.html">Mon Panier</a></li>
+    <li><a href="cont.html">Contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main>
+        <section id="panier">
+            <h2>Votre Panier</h2>
+            <div id="panier-contenu">
+                <p>Il n'y a pas d'articles dans votre panier pour le moment.</p>
+            </div>
+            <div id="panier-total">
+                <p>Total : <span id="total-prix">0€</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SalMystica. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Exemple simple de panier
+        const panier = [
+            { titre: "Le Mystère des Ombres", prix: 12.50 },
+            { titre: "Les Secrets du Passé", prix: 15.00 },
+            { titre: "Au-delà des Étoiles", prix: 9.90 }
+        ];
+
+        function afficherPanier() {
+            const contenu = document.getElementById('panier-contenu');
+            const totalPrixSpan = document.getElementById('total-prix');
+            contenu.innerHTML = '';
+
+            if (panier.length === 0) {
+                contenu.innerHTML = '<p>Il n\'y a pas d\'articles dans votre panier pour le moment.</p>';
+                totalPrixSpan.textContent = '0€';
+                return;
+            }
+
+            let total = 0;
+            panier.forEach(article => {
+                const divArticle = document.createElement('div');
+                divArticle.className = 'article-panier';
+                divArticle.textContent = ${article.titre} - ${article.prix.toFixed(2)}€;
+                contenu.appendChild(divArticle);
+                total += article.prix;
+            });
+
+            totalPrixSpan.textContent = total.toFixed(2) + '€';
+        }
+
+        // Appel de la fonction au chargement
+        afficherPanier();
+    </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SalMystica - Livres</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #dbe9f4, #f9f7f7);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: rgba(221, 214, 255, 0.6);
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      color: #7c6ca0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #5a4e80;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #9c8de1;
+    }
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 30px;
+      border: 2px solid #a99ed8;
+      border-radius: 8px;
+      outline-color: #9c8de1;
+    }
+    .livre {
+      background: rgba(236, 234, 255, 0.8);
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(156, 141, 225, 0.3);
+    }
+    .livre img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .livre button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      background-color: #9c8de1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .livre button:hover {
+      background-color: #7e6dcf;
+    }
+    .prix {
+      font-weight: bold;
+      color: #5a4e80;
+      margin: 8px 0;
+    }
+    footer {
+      background: rgba(221, 214, 255, 0.5);
+      padding: 20px 0;
+      margin-top: 40px;
+      color: #4b4276;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SalMystica</h1>
+    <nav>
+  <a href="index.html">Nos Livres</a>
+  <a href="ann.html">Annonces</a>
+  <a href="pan.html">Mon Panier (<span id="panier-count">0</span>)</a>
+  <a href="cont.html">Contact</a>
+</nav>
+
+  </header>
+
+  <main>
+    <input type="text" id="search" placeholder="Rechercher un livre..." oninput="searchLivres()" />
+    <div id="livre-list">
+
+      <!-- Livre 1 -->
+      <div class="livre">
+        <img src="Le-Mystere-des-Ombres.jpg" alt="Livre 1" />
+        <h3>Le Mystère des Ombres</h3>
+        <p class="prix">120 DH</p>
+        <p>Au cœur de l'aristocratie écossaise, la disparition de Lucille Cryer-Edwardes avait fait scandale. Un an plus tard, alors que les jeunes détectives Tom Johnson et Scott McLaan passent leurs vacances au Manoir des Ombres, le cadavre de lady Cryer-Edwardes est déterré du parc. Cela ne fait pas l'ombre d'un doute : son assassin réside au Manoir. Très vite, les secrets de famille ressurgissent du passé... Au milieu de ces trahisons, mensonges et dissimulations, y a-t-il une once de vérité ?</p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 2 -->
+      <div class="livre">
+        <img src="les_secrets_de_passe-609887-250-400.jpg" alt="Livre 2" />
+        <h3>Les Secrets du Passé</h3>
+        <p class="prix">95 DH</p>
+        <p>De la chaleur moite des rives du Mississippi surgissent les effluves d'une histoire très ancienne...Pourquoi Riva Staulet, la quarantaine gracieuse et élégante - et apparemment heureuse - , s'acharne-t-elle à remuer la fange des souvenirs ?Quel drame autrefois a bouleversé sa vie ? Quel rôle y a joué Edison Gallant, candidat sénateur, personnage plus que douteux ? Ces secrets intriguent fort Noël Staulet, le beau-fils de Riva. Comment pourrait-il rester insensible au charme de cette femme encore si belle, qui pour lui incarne la féminité ? Dans le décor luxuriant de La Nouvelle-Orléans, avec ses balcons de fer forgé pareils à de la dentelle et ses bougainvillées épanouies, les passions se déchaînent, laissant au destin le soin de venger Riva et les siens...</p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 3 -->
+      <div class="livre">
+        <img src="9782800174259_1_75.jpg" alt="Livre 3" />
+        <h3>Au-delà des Étoiles</h3>
+        <p class="prix">110 DH</p>
+        <p>Quartier des étoiles, six adolescents télescopent leurs rêves sur un ciel de béton. S'écraser ou se relever, leur destin va s'écrire aux rythmes de la danse hip-hop.Une nouvelle saga pour vibrer au rythme du beat et des années lycée, dans un langage jeune qui sait aussi confronter les ados à la réalité.</p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 4 -->
+      <div class="livre">
+        <img src="download (2).jpg" alt="Livre 4" />
+        <h3>La Forêt Éternelle</h3>
+        <p class="prix">130 DH</p>
+        <p>Le petit cahier d'expression créative à petit prix proposant 100 modèles à colorier pour plonger au cœur de soi et se ressourcer à la lisière des bois.</p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 5 -->
+      <div class="livre">
+        <img src="images (4).jpg" alt="Livre 5" />
+        <h3>Les Gardiens du Savoir</h3>
+        <p class="prix">150 DH</p>
+        <p>Autour du village de Kvarl, en plein cœur des terres gelées du Verkenard, des patrouilles entières disparaissent sans laisser la moindre trace. Comment des soldats expérimentés peuvent-ils ainsi se volatiliser pendant une affectation de routine? La terreur s’empare de la compagnie d’infanterie impériale stationnée sur place alors que son capitaine, dévasté par la perte de ses hommes, écrit à ses supérieurs afin d’obtenir de l’aide. Lorsqu’une réponse arrive, elle est loin d’être celle qu’il espérait. </p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 6 -->
+      <div class="livre">
+        <img src="echos.jpg" alt="Livre 6" />
+        <h3>Échos du Silence</h3>
+        <p class="prix">90 DH</p>
+        <p>Il est des moments innombrables où Dieu se tait. Où le cri de l'homme se heurte au silence, renvoyé par l'implacable écho. De ce silence de Dieu, de cette absence d'amour, le siècle passé comme celui qui s'ouvre portent les stigmates avec leur cohorte de charniers, de génocides et de catastrophes naturelles.</p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 7 -->
+      <div class="livre">
+        <img src="miserables.jpg" alt="Livre 7" />
+        <h3>Les Misérables</h3>
+        <p class="prix">100 DH</p>
+        <p>L'action se déroule en France au cours du premier tiers du xixe siècle, entre la bataille de Waterloo (1815) et les émeutes de juin 1832. On y suit, sur cinq tomes[3], la vie de Jean Valjean, de sa sortie du bagne jusqu'à sa mort. Autour de lui gravitent les personnages, dont certains vont donner leur nom aux différentes parties du roman, témoins de la misère de ce siècle, misérables eux-mêmes ou proches de la misère : Fantine, Cosette, Marius, mais aussi les époux Thénardier et leurs enfants Éponine, Azelma et Gavroche, ainsi que le représentant de la loi, Javert. </p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+      <!-- Livre 8 -->
+      <div class="livre">
+        <img src="Les Hauts de Hurlevent.jpg" alt="Livre 8" />
+        <h3>Les Hauts de Hurlevent</h3>
+        <p class="prix">140 DH</p>
+        <p>Une histoire d'amour et de vengeance dans un paysage sauvage de l'Angleterre : Mr Earnshaw, père d'Hindley et de Catherine, adopte Heathcliff qui tombe amoureux de Catherine tandis qu'une rivalité s'instaure entre lui et Hindley</p>
+        <button onclick="ajouterAuPanier()">Ajouter au panier</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 SalMystica. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    let panier = 0;
+
+    function ajouterAuPanier() {
+      panier++;
+      document.getElementById("panier-count").textContent = panier;
+    }
+
+    function searchLivres() {
+      const searchValue = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.livre').forEach(livre => {
+        const text = livre.textContent.toLowerCase();
+        livre.style.display = text.includes(searchValue) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

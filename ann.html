@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SalMystica - Annonces</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #dbe9f4, #f9f7f7);
+            color: #333348;
+        }
+
+        header {
+            background: rgba(221, 214, 255, 0.6);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #7c6ca0;
+            text-shadow: 0 0 5px #a99ed8;
+            animation: brille 3s infinite alternate ease-in-out;
+            margin: 0;
+        }
+
+        @keyframes brille {
+            from { text-shadow: 0 0 5px #a99ed8; }
+            to { text-shadow: 0 0 15px #c8b9f7; }
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #5a4e80;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #9c8de1;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        #annonces h2 {
+            font-size: 2.5em;
+            color: #5a4e80;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .offre {
+            background: rgba(236, 234, 255, 0.7);
+            border-left: 6px solid #9c8de1;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(156, 141, 225, 0.3);
+            color: #4b4276;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+        }
+
+        .offre svg {
+            width: 40px;
+            height: 40px;
+            fill: #9c8de1;
+            flex-shrink: 0;
+            animation: pulse 2.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        footer {
+            background: rgba(221, 214, 255, 0.5);
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 60px;
+            color: #4b4276;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SalMystica</h1>
+       <nav>
+  <ul>
+    <li><a href="index.html">Nos Livres</a></li>
+    <li><a href="ann.html">Annonces</a></li>
+    <li><a href="pan.html">Mon Panier</a></li>
+    <li><a href="cont.html">Contact</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main>
+        <section id="annonces">
+            <h2>Offres Spéciales de l'Été</h2>
+            
+            <div class="offre">
+                <!-- Icône panier cadeau -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M54 18h-4a10 10 0 0 0-20 0h-4a6 6 0 0 0 0 12h28a6 6 0 0 0 0-12zm-22 0a6 6 0 0 1 12 0h-12zm-6 22h-4v-6h4zm14 0h-12v-6h12zm10 0h-4v-6h4z"/></svg>
+                <div>
+                    <h3>20% de réduction</h3>
+                    <p>Profitez d'une remise de 20% sur tous les livres jusqu'à fin août !</p>
+                </div>
+            </div>
+
+            <div class="offre">
+                <!-- Icône cadeau -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M56 26v26a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V26zM12 20h40v6H12zM24 10a8 8 0 0 1 16 0h8a4 4 0 0 1-4 4h-8a4 4 0 0 1-8 0h-8a4 4 0 0 1-4-4z"/></svg>
+                <div>
+                    <h3>Livres gratuits</h3>
+                    <p>Abonnez-vous à notre newsletter et recevez un livre gratuit chaque mois.</p>
+                </div>
+            </div>
+
+            <div class="offre">
+                <!-- Icône soleil -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="14"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M14.14 14.14l5.66 5.66M44.2 44.2l5.66 5.66M14.14 49.86l5.66-5.66M44.2 19.8l5.66-5.66"/></svg>
+                <div>
+                    <h3>Fête d'été</h3>
+                    <p>Participez à notre événement spécial avec des promotions et cadeaux exclusifs !</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SalMystica. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

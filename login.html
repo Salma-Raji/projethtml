@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Connexion - SalMystica</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background: linear-gradient(135deg, #e6e4f9, #fdfbff);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(124, 108, 160, 0.3);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      color: #7c6ca0;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #a99ed8;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #9c8de1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: #7e6dcf;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Connexion à SalMystica</h2>
+    <input type="text" id="username" placeholder="Nom d'utilisateur" />
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button onclick="verifier()">Se connecter</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <script>
+    function verifier() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const error = document.getElementById('errorMsg');
+
+      if (username === "salma" && password === "1234") {
+        window.location.href = "index.html"; // vers page "Nos Livres"
+      } else {
+        error.textContent = "Identifiants incorrects.";
+      }
+    }
+  </script>
+</body>
+</html>
